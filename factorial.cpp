@@ -6,7 +6,7 @@
 
 #include <iostream>
 using namespace std;
-int Factorial(int n)
+int factorial(int n)
 {
 	if (n == 0)
 		return 1;
