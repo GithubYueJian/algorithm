@@ -1,5 +1,5 @@
 /*
-* Purpose: insert_sort sorting
+* Purpose: insert sorting
 * Author: Jian Yue
 * Data:   2020/08/19
 */
