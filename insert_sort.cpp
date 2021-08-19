@@ -1,5 +1,5 @@
 /*
-* Purpose: Bubble sorting
+* Purpose: insert_sort sorting
 * Author: Jian Yue
 * Data:   2020/08/19
 */
