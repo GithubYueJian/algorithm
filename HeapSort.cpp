@@ -1,7 +1,7 @@
 /*
 * Purpose: Heap sorting
 * Author: Jian Yue
-* Data:   2020/08/20
+* Date:   2020/08/20
 */
 #include<iostream>
 #include<string>
