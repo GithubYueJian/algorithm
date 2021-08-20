@@ -1,7 +1,7 @@
 /*
 * Purpose: get n!;
 * Author: Jian Yue
-* Data:   2020/08/18
+* Date:   2020/08/18
 */
 
 #include <iostream>
