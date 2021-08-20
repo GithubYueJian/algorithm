@@ -1,7 +1,7 @@
 /*
 * Purpose: Interpolation Searching
 * Author: Jian Yue
-* Data:   2020/08/20
+* Date:   2020/08/20
 */
 #include<iostream>
 using namespace std;
