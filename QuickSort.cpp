@@ -1,12 +1,8 @@
-/***************************************************************
-Program or Function Name: quick sort
-
-Last Revised: 06/08/2021
-Filename: quickSort.cpp
-Programmer: Jian Yue
-Description: Quick sort
-
-***************************************************************/
+/*
+* Purpose: quick sorting
+* Author: Jian Yue
+* Data:   2020/08/06
+*/
 #include<iostream>
 #include<string>
 using std::string;
