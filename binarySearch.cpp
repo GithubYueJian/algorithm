@@ -6,7 +6,7 @@
 
 #include<iostream>
 using namespace std;
-int binarySearch(int *arr, int low, int high, int target)//递归实现
+int binarySearch(int *arr, int low, int high, int target)
 {
 	int middle = (low + high) / 2;
 	if (low > high)
