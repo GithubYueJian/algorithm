@@ -110,8 +110,8 @@ void InsertNode(ListNode* head, int node_value, int in_value)
 
 ListNode* createList(vector<int> nums)
 {
-	ListNode* dummy(0);
-	ListNode* p=dummy;
+	ListNode* dummy= new ListNode(0);
+	ListNode* p = dummy;
 	for (auto num : nums)
 	{
 		p->next = new ListNode(num);
