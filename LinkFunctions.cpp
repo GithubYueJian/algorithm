@@ -1,60 +1,65 @@
 /*
 * Purpose: Link functions
 * Author: Jian Yue
-* Data:   2020/08/23
+* Data:   2020/08/23,revised 2020/09/10
 */
+
 #include<iostream>
 #include<string>
 using std::string;
 #include<vector>
 using std::vector;
 using namespace std;
-const int Rows = 4, Cols = 3;
+#include<unordered_set>
+#include<unordered_map>
+#include<algorithm>
+#include<cmath>
 
-struct node
-{
-	int value;
-	node *next;
-	node(int x) :value(x), next(nullptr) {}
+struct ListNode {
+	int val;
+	ListNode *next;
+	ListNode() : val(0), next(nullptr) {}
+	ListNode(int x) : val(x), next(nullptr) {}
+	ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-node* addNode(node* head, int value)
+ListNode* addNode(ListNode* head, int value)
 {
-	node* p = head;
+	ListNode* p = head;
 	while (p->next != nullptr)
 		p = p->next;
 
-	node* newNode = new node(value);
+	ListNode* newNode = new ListNode(value);
 	p->next = newNode;
 	return head;
 }
 
-void travelList(node* head)
+void travelList(ListNode* head)
 {
-	node* p = head->next;
-	
+	ListNode* p = head->next;
+
 	while (p != nullptr)
-		{	
-			cout << p->value << " ";
-			p = p->next;
-		}
+	{
+		cout << p->val << " ";
+		p = p->next;
+	}
 	cout << endl;
 	return;
 }
-void removeNode(node* head,int del_value)
+void removeNode(ListNode* head, int del_value)
 {
-	node* p = head;
+	ListNode* p = head;
 	if (p->next == nullptr)
 	{
 		cout << " this is a empty link" << endl;
 		return;
 	}
 	p = p->next;
-	while (p->next!=nullptr)
+	while (p->next != nullptr)
 	{
-		if (p->value == del_value)
+		if (p->val == del_value)
 		{
-			p->value = p->next->value;
+			p->val = p->next->val;
 			p->next = p->next->next;
 			break;
 		}
@@ -63,11 +68,11 @@ void removeNode(node* head,int del_value)
 	}
 }
 
-node* reverseList(node* head)
+ListNode* reverseList(ListNode* head)
 {
-	
-	node* p = head->next;
-	node* temp = p->next;
+
+	ListNode* p = head->next;
+	ListNode* temp = p->next;
 	p->next = nullptr;
 
 	while (temp != nullptr)
@@ -80,19 +85,19 @@ node* reverseList(node* head)
 	return head;
 }
 
-void InsertNode(node* head,  int node_value, int in_value)
+void InsertNode(ListNode* head, int node_value, int in_value)
 {
-	node* p = head;
+	ListNode* p = head;
 	if (p->next == nullptr)
 	{
 		cout << " this is a empty link" << endl;
 		return;
 	}
-	node* in_node = new node(in_value);
+	ListNode* in_node = new ListNode(in_value);
 	p = p->next;
 	while (p->next != nullptr)
 	{
-		if (p->value == node_value)
+		if (p->val == node_value)
 		{
 			in_node->next = p->next;
 			p->next = in_node;
@@ -102,20 +107,15 @@ void InsertNode(node* head,  int node_value, int in_value)
 
 	}
 }
-int main()
-{
-	node* head = new node(0);
-	for(int i=0;i<10;++i)
-	{ 
-		addNode(head, i);
-	}
 
-	travelList(head);
-	removeNode(head, 5);
-	travelList(head);
-	InsertNode(head, 4, 5);
-	travelList(head);
-	node* newhead = nullptr;
-	newhead = reverseList(head);
-	travelList(newhead);
+ListNode* createList(vector<int> nums)
+{
+	ListNode* dummy(0);
+	ListNode* p=dummy;
+	for (auto num : nums)
+	{
+		p->next = new ListNode(num);
+		p = p->next;
+	}
+	return dummy->next;
 }
